@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<repositories version="1.0">
+	<repo priority="100" quality="experimental" status="unofficial">
+		<name>hoodeddeath</name>
+		<description land="en">Misc ebuilds, made primarily for my own systems</description>
+		<homepage>https://github.com/HoodedDeath/hoodeddeath-overlay</homepage>
+		<owner>
+			<name>HoodedDeath</name>
+		</owner>
+		<source type="git">git@ellora.lab:death/hoodeddeath-overlay.git</source>
+		<source type="git">http://ellora.lab/death/hoodeddeath-overlay.git</source>
+		<source type="git">git://ellora.lab/death/hoodeddeath-overlay.git</source>
+	</repo>
+</repositories>
