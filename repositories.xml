@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <repositories version="1.0">
-	<repo priority="100" quality="experimental" status="unofficial">
+	<repo priority="9999" quality="experimental" status="unofficial">
 		<name>hoodeddeath</name>
 		<description land="en">Misc ebuilds, made primarily for my own systems</description>
 		<homepage>https://github.com/HoodedDeath/hoodeddeath-overlay</homepage>
