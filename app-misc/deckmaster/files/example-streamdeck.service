@@ -3,7 +3,7 @@ Description="Deckmaster Service"
 
 [Service]
 # Change the path to your .deck file and ensure the path to deckmaster is correct
-ExecStart=/usr/bin/deckmaster --deck path-to/some.deck
+ExecStart=/usr/bin/deckmaster -deck path-to/some.deck
 Restart=on-failure
 ExecReload=kill -HUP $MAINPID
 
