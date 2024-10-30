@@ -8,4 +8,4 @@ PathExists=/dev/streamdeck
 Unit=streamdeck.service
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
