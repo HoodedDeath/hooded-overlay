@@ -19,7 +19,7 @@ LICENSE="
 "
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~x86"
-IUSE="systemd" # USE +systemd installs example service files into /usr/share/deckmaster
+IUSE="systemd udev-uinput-rules" # USE +systemd installs example service files into /usr/share/deckmaster, +udev-uinput-rules to install a udev rules file to allow the group 'input' write access to /dev/uinput (add user to input group for ability to emulate input devices)
 RDEPEND="virtual/udev media-fonts/roboto"
 BDEPEND="virtual/udev dev-lang/go app-alternatives/gzip dev-vcs/git"
 DEPEND="${RDEPEND}"
@@ -51,6 +51,9 @@ src_install() {
 		doins "${FILESDIR}/example-streamdeck.service"
 		doins "${FILESDIR}/example-streamdeck.path"
 	fi
+	if use udev-uinput-rules; then
+		udev_dorules "${FILESDIR}/98-uinput-permissions.rules"
+	fi
 	default
 }
 
@@ -58,5 +61,14 @@ pkg_postinst() {
 	if use systemd; then
 		elog "Example systemd service and path files have been installed to /usr/share/${PN}"
 		elog "These files should be modified to point to the correct device and layout file, then installed as user services"
+		elog
+	fi
+	if use udev-uinput-rules; then
+		elog "Make sure to add your user to the 'input' group to allow for emulating input devices on your Stream Deck"
+		elog
+	else
+		elog "With USE -udev-uinput-rules, Deckmaster will not for sure be able to emulate input devices / key presses."
+		elog "If you'd like to use that feature, either enable that USE flag, or otherwise ensure your user can write to /dev/uinput"
+		elog
 	fi
 }
