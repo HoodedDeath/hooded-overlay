@@ -11,8 +11,8 @@ SRC_URI="
 
 LICENSE="
 	MIT
-	BSD-3-Clause
-	BSD-2-Clause
+	BSD-3
+	BSD-2
 	WTFPL
 	ISC
 	Apache-2.0
