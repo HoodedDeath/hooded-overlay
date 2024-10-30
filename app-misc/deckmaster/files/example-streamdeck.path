@@ -1,0 +1,11 @@
+[Unit]
+Description="Stream Deck Device Path"
+
+[Path]
+# The device name will be different if you use streamdeck-mini or streamdeck-xl
+# Assuming you have installed the udev rules, you can see what path to use by running 'ls /dev/streamdeck*'
+PathExists=/dev/streamdeck
+Unit=streamdeck.service
+
+[Install]
+WantedBy=multi-user.target
