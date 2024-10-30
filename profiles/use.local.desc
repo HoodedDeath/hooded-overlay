@@ -1,0 +1,2 @@
+app-misc/deckmaster:udev-uinput-rules - Install a rules file to allow 'input' group to write to /dev/uinput
+app-misc/deckmaster:systemd - Install example service and path files
