@@ -7,8 +7,8 @@
 		<owner>
 			<name>HoodedDeath</name>
 		</owner>
-		<source type="git">git@ellora.lab:death/hoodeddeath-overlay.git</source>
-		<source type="git">http://ellora.lab/death/hoodeddeath-overlay.git</source>
-		<source type="git">git://ellora.lab/death/hoodeddeath-overlay.git</source>
+		<source type="git">git@github.com:HoodedDeath/hooded-overlay.git</source>
+		<source type="git">https://github.com/HoodedDeath/hooded-overlay.git</source>
+		<source type="git">git://github.com/HoodedDeath/hooded-overlay.git</source>
 	</repo>
 </repositories>
