@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+        <maintainer type="person">
+                <email></email>
+                <name>HoodedDeath</name>
+        </maintainer>
+        <use>
+                <flag name="web-server">Install dependencies needed to run in web server mode</flag>
+                <flag name="hddtemp">Install app-admin/hddtemp to enable hard drive temp monitoring</flag>
+                <flag name="docker">Install dev-python/docker to enable docker container monitoring</flag>
+        </use>
+</pkgmetadata>
