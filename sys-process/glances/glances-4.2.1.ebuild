@@ -10,14 +10,14 @@ DISTUTILS_USE_PEP517=setuptools
 
 inherit distutils-r1 linux-info optfeature
 
-DESCRIPTION="CLI curses based monitoring tool"
+DESCRIPTION="Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems. "
 HOMEPAGE="https://github.com/nicolargo/glances"
 SRC_URI="https://github.com/nicolargo/${PN}/archive/v${PV}.tar.gz -> ${P}.gh.tar.gz"
 
 LICENSE="LGPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~arm ~arm64 ~ppc64 ~x86 ~amd64-linux ~x86-linux"
-IUSE="web-server hddtemp docker"
+IUSE="web-server hddtemp docker zeroconf requests pygal netifaces pymdstat pysnmp" # wifi"
 
 RDEPEND="
         $(python_gen_cond_dep '
@@ -25,15 +25,21 @@ RDEPEND="
                 dev-python/orjson[${PYTHON_USEDEP}]
                 dev-python/packaging[${PYTHON_USEDEP}]
                 >=dev-python/psutil-5.4.3[${PYTHON_USEDEP}]
+                web-server? (
+                        dev-python/fastapi[${PYTHON_USEDEP}]
+                        dev-python/uvicorn[${PYTHON_USEDEP}]
+                )
+                docker? ( dev-python/docker[${PYTHON_USEDEP}] )
+                zeroconf? ( dev-python/zeroconf[${PYTHON_USEDEP}] )
+                requests? ( dev-python/requests[${PYTHON_USEDEP}] )
+                pygal? ( dev-python/pygal[${PYTHON_USEDEP}] )
+                netifaces? ( dev-python/netifaces[${PYTHON_USEDEP}] )
+                pymdstat? ( dev-python/pymdstat[${PYTHON_USEDEP}] )
+                pysnmp? ( dev-python/pysnmp[${PYTHON_USEDEP}] )
         ')
-        web-server? ( $(python_gen_cond_dep '
-                dev-python/fastapi[${PYTHON_USEDEP}]
-                dev-python/jinja[${PYTHON_USEDEP}]
-                dev-python/uvicorn[${PYTHON_USEDEP}]
-        ') )
         hddtemp? ( app-admin/hddtemp )
-        docker? ( $(python_gen_cond_dep 'dev-python/docker[${PYTHON_USEDEP}]') )
 "
+        # wifi? ( net-wireless/python-wifi )
 
 # PYTHON_USEDEP omitted on purpose
 BDEPEND="doc? ( dev-python/sphinx-rtd-theme )"
@@ -57,13 +63,13 @@ python_test() {
 }
 
 pkg_postinst() {
-        optfeature "Autodiscover mode" dev-python/zeroconf
-        optfeature "Cloud support" dev-python/requests
-        # optfeature "Docker monitoring support" dev-python/docker
-        optfeature "SVG graph support" dev-python/pygal
-        optfeature "IP plugin" dev-python/netifaces
-        optfeature "RAID monitoring" dev-python/pymdstat
-        optfeature "RAID support" dev-python/pymdstat
-        optfeature "SNMP support" dev-python/pysnmp
-        optfeature "WIFI plugin" net-wireless/python-wifi
+        # optfeature "Autodiscover mode" dev-python/zeroconf
+        # optfeature "Cloud support" dev-python/requests
+        # optfeature "SVG graph support" dev-python/pygal
+        # optfeature "IP plugin" dev-python/netifaces
+        # optfeature "RAID monitoring" dev-python/pymdstat
+        # optfeature "RAID support" dev-python/pymdstat
+        # optfeature "SNMP support" dev-python/pysnmp
+        # optfeature "WIFI plugin" net-wireless/python-wifi
+        elog "As net-wireless/python-wifi is no longer in the official repos, and the PyPi package doesn't function under Python 3, the WiFi plugin is unavailable."
 }

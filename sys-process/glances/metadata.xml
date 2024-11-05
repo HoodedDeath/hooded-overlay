@@ -9,5 +9,12 @@
                 <flag name="web-server">Install dependencies needed to run in web server mode</flag>
                 <flag name="hddtemp">Install app-admin/hddtemp to enable hard drive temp monitoring</flag>
                 <flag name="docker">Install dev-python/docker to enable docker container monitoring</flag>
+                <flag name="zeroconf">Install dev-python/zeroconf to enable autodiscover features</flag>
+                <flag name="requests">Install dev-python/requests to enable cloud support</flag>
+                <flag name="pygal">Install dev-python/pygal to enable SVG graph support</flag>
+                <flag name="netifaces">Install dev-python/netifaces to enable IP info</flag>
+                <flag name="pymdstat">Install dev-python/pymdstat to enable RAID support and monitoring</flag>
+                <flag name="pysnmp">Install dev-python/pysnmp to enable SNMP support</flag>
+                <!-- <flag name="wifi">Install net-wireless/python-wifi to enable WiFi info support</flag> -->
         </use>
 </pkgmetadata>
