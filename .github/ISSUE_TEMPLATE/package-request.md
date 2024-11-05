@@ -2,7 +2,7 @@
 name: Package request
 about: Suggest a new package for this overlay
 title: ''
-labels: enhancement
+labels: package request
 assignees: HoodedDeath
 
 ---
