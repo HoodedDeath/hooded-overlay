@@ -1,0 +1,8 @@
+[Unit]
+Description=Glances Web Server
+
+[Service]
+ExecStart=/usr/bin/glances -w
+
+[Install]
+WantedBy=multi-user.target

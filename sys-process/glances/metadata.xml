@@ -16,5 +16,6 @@
                 <flag name="pymdstat">Install dev-python/pymdstat to enable RAID support and monitoring</flag>
                 <flag name="pysnmp">Install dev-python/pysnmp to enable SNMP support</flag>
                 <!-- <flag name="wifi">Install net-wireless/python-wifi to enable WiFi info support</flag> -->
+                <flag name="systemd">Install Systemd service files for the Glances server</flag>
         </use>
 </pkgmetadata>
