@@ -51,3 +51,9 @@ src_configure() {
 	)
 	cmake_src_configure
 }
+
+pkg_postinst() {
+	elog "This ebuild does not currently install the needed settings schema for maliit keyboard."
+	elog "Download the schema from here: https://github.com/maliit/keyboard/blob/master/data/schemas/org.maliit.keyboard.maliit.gschema.xml"
+	elog "Put that schema into /usr/share/glib-2.0/schemas/ and run 'glib-compile-schemas /usr/share/glib-2.0/schemas/'"
+}
