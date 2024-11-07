@@ -41,4 +41,5 @@ pkg_postinst() {
 		elog "a service."
 		elog "Without knowing how a session uses the upstream unit, I cannot"
 		elog "know how a session will react to the absence of that unit."
+	fi
 }
