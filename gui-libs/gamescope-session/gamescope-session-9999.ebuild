@@ -9,7 +9,7 @@ LICENSE="MIT"
 
 SLOT="0"
 IUSE="systemd"
-RDEPEND="systemd? sys-apps/systemd"
+RDEPEND="systemd? ( sys-apps/systemd )"
 DEPEND="${RDEPEND}"
 
 src_install() {
