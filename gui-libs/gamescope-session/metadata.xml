@@ -6,6 +6,6 @@
     <description>HoodedDeath</description>
   </maintainer>
   <use>
-    <flag name="systemd">Install example systemd service and path files.</flag>
+    <flag name="systemd">Install systemd user service</flag>
   </use>
 </pkgmetadata>
