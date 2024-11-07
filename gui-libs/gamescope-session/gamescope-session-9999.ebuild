@@ -1,5 +1,5 @@
-inherit git-r3 systemd
 EAPI=8
+inherit git-r3 systemd
 
 DESCRIPTION="ChimeraOS session on Gamescope - Own personal repository, issues and forks should be made on ChimeraOS/gamescope-session"
 HOMEPAGE="https://github.com/ChimeraOS/gamescope-session"
