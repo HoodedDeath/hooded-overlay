@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email></email>
+    <description>HoodedDeath</description>
+  </maintainer>
+  <use>
+    <flag name="systemd">Install example systemd service and path files.</flag>
+  </use>
+</pkgmetadata>
