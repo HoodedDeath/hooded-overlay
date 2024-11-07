@@ -21,6 +21,8 @@ src_install() {
 	for item in ${arr[@]}; do
 		dobin "${S}/usr/bin/${item}"
 	done
+	insinto /usr
+	doins -r "${S}/usr/share/"
 	insinto /usr/bin
 	insopts -m 755
 	doins -r "${S}/usr/bin/steamos-polkit-helpers"
