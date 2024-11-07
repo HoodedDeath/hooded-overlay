@@ -10,6 +10,7 @@ LICENSE="MIT"
 
 SLOT="0"
 RDEPEND="
+	gui-wm/gamescope
 	gui-libs/gamescope-session[systemd]
 	games-util/steam-launcher
 "
