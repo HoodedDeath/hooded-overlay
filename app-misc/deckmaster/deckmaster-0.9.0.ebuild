@@ -6,7 +6,7 @@ DESCRIPTION="An application to control your Elgato Stream Deck on Linux"
 HOMEPAGE="https://github.com/muesli/deckmaster"
 SRC_URI="
 	https://github.com/muesli/deckmaster/archive/refs/tags/v0.9.0.tar.gz -> ${P}.tar.gz
-	http://ellora.lab:3000/death/hoodeddeath-overlay/releases/download/deckmaster-0.9.0-vendor/deckmaster-0.9.0-vendor.tar.xz
+	https://github.com/HoodedDeath/hooded-overlay/releases/download/deckmaster-0.9.0-vendor/deckmaster-0.9.0-vendor.tar.xz
 "
 
 LICENSE="
