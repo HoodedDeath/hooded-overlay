@@ -73,7 +73,7 @@ RDEPEND="
 	)
 	wayland? (
 		dev-libs/wayland[${MULTILIB_USEDEP}]
-		x11-misc/libxkbcommon[wayland,${MULTILIB_USEDEP}]
+		x11-libs/libxkbcommon[wayland,${MULTILIB_USEDEP}]
 	)
 	mangoapp? (
 		=media-libs/imgui-1.89.9*[glfw]
