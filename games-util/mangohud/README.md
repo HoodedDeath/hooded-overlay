@@ -1,0 +1,2 @@
+# MangoHud
+This package is a modified copy of the `games-util/mangohud` from the GURU repo. This ebuild has been modified to include a use dependant dependency on `x11-libs/libxkbcommon`. The reason is the GURU version fails to build if USE `wayland` and `abi_x86_32` are enabled, as this setup requires `x11-libs/libxkbcommon[wayland,abi_x86_32]`, which was not being reflected in the GURU version.
