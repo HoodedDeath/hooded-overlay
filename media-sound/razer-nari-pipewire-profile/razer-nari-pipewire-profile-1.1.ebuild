@@ -4,7 +4,7 @@ inherit udev
 
 DESCRIPTION="PipeWire profile for Razer Nari"
 HOMEPAGE="https://github.com/mrquantumoff/razer-nari-pipewire-profile"
-SRC_URI="https://github.com/mrquantumoff/razer-nari-pipewire-profile/archive/refs/tags/v${PV}.tar.gz"
+SRC_URI="https://github.com/mrquantumoff/razer-nari-pipewire-profile/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
