@@ -1,0 +1,1 @@
+This package primarily exists for me to get acquainted with how often it updates, to determine if I'd like to attempt maintaining it in GURU, as well as to fix an issue with the GURU ebuild where `chrome_crashpad_handler` and `chrome-sandbox` weren't being installed with executable permission.
