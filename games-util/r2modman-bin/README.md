@@ -1,0 +1,1 @@
+This ebuild was copied from GURU as of Feb. 4th, 2025. Maintainer from GURU: Gonçalo Negrier Duarte. Original copied version: 3.1.51
