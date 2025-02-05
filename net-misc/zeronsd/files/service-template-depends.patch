@@ -1,0 +1,13 @@
+--- zeronsd-0.5.2/src/supervise.rs    2022-05-21 08:18:18.000000000 -0600
++++ zeronsd-0.5.2/src/patched_supervise.rs    2025-02-05 03:20:56.113125889 -0700
+@@ -35,8 +35,8 @@
+ const SYSTEMD_TEMPLATE: &str = r#"
+ [Unit]
+ Description=zeronsd for network {network}
+-Requires=zerotier-one.service
+-After=zerotier-one.service
++Requires=zerotier.service
++After=zerotier.service
+ 
+ [Service]
+ Type=simple
