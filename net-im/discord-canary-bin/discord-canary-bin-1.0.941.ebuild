@@ -4,8 +4,6 @@
 EAPI=8
 
 MY_PN=${PN/-bin/}
-MY_BIN="D${MY_PN/d/}"
-MY_BIN="${MY_BIN/-canary/}Canary"
 
 inherit desktop linux-info pax-utils unpacker xdg
 
@@ -52,31 +50,7 @@ RDEPEND="
 	x11-libs/pango
 "
 
-QA_PREBUILT="
-	opt/discord-canary/${MY_BIN}
-	opt/discord-canary/chrome_crashpad_handler
-	opt/discord-canary/chrome-sandbox
-	opt/discord-canary/libffmpeg.so
-	opt/discord-canary/libvk_swiftshader.so
-	opt/discord-canary/libvulkan.so
-	opt/discord-canary/libvulkan.so.1
-	opt/discord-canary/libEGL.so
-	opt/discord-canary/libGLESv2.so
-	opt/discord-canary/libVkICD_mock_icd.so
-	opt/discord-canary/swiftshader/libEGL.so
-	opt/discord-canary/swiftshader/libGLESv2.so
-	opt/discord-canary/swiftshader/libvk_swiftshader.so
-"
-
 CONFIG_CHECK="~USER_NS"
-
-src_prepare() {
-	default
-
-	sed -i \
-		-e "s:/usr/share/${MY_PN}/${MY_BIN}:/opt/${MY_PN}/${MY_BIN}:g" \
-		usr/share/${MY_PN}/${MY_PN}.desktop || die
-}
 
 src_install() {
 	newicon usr/share/${MY_PN}/${MY_PN//-canary/}.png ${MY_PN}.png
@@ -84,10 +58,9 @@ src_install() {
 
 	insinto /opt/${MY_PN}
 	doins -r usr/share/${MY_PN}/.
-	fperms +x /opt/${MY_PN}/${MY_BIN}
-	fperms +x /opt/${MY_PN}/chrome_crashpad_handler
-	fperms +x /opt/${MY_PN}/chrome-sandbox
-	dosym ../../opt/${MY_PN}/${MY_BIN} usr/bin/${MY_PN}
+	fperms +x /opt/${MY_PN}/postinst.sh
+	fperms +x /opt/${MY_PN}/updater_bootstrap
+	dobin usr/bin/discord-canary
 
 	pax-mark -m "${ED}"/opt/${MY_PN}/${MY_PN}
 }
