@@ -4,8 +4,6 @@
 EAPI=8
 
 MY_PN=${PN/-bin/}
-MY_BIN="D${MY_PN/d/}"
-MY_BIN="${MY_BIN/-ptb/}PTB"
 
 inherit desktop linux-info pax-utils unpacker xdg
 
@@ -50,29 +48,10 @@ RDEPEND="
 "
 
 QA_PREBUILT="
-	opt/discord-ptb/${MY_BIN}
-	opt/discord-ptb/chrome-sandbox
-	opt/discord-ptb/chrome_crashpad_handler
-	opt/discord-ptb/libffmpeg.so
-	opt/discord-ptb/libvk_swiftshader.so
-	opt/discord-ptb/libvulkan.so.1
-	opt/discord-ptb/libEGL.so
-	opt/discord-ptb/libGLESv2.so
-	opt/discord-ptb/libVkICD_mock_icd.so
-	opt/discord-ptb/swiftshader/libEGL.so
-	opt/discord-ptb/swiftshader/libGLESv2.so
-	opt/discord-ptb/swiftshader/libvk_swiftshader.so
+	opt/discord-ptb/updater_bootstrap
 "
 
 CONFIG_CHECK="~USER_NS"
-
-src_prepare() {
-	default
-
-	sed -i \
-		-e "s:/usr/share/${MY_PN}/${MY_BIN}:/opt/${MY_PN}/${MY_BIN}:g" \
-		usr/share/${MY_PN}/${MY_PN}.desktop || die
-}
 
 src_install() {
 	newicon usr/share/${MY_PN}/${MY_PN//-ptb}.png ${MY_PN}.png
@@ -80,10 +59,9 @@ src_install() {
 
 	insinto /opt/${MY_PN}
 	doins -r usr/share/${MY_PN}/.
-	fperms +x /opt/${MY_PN}/${MY_BIN}
-	fperms +x /opt/${MY_PN}/chrome_crashpad_handler
-	fperms +x /opt/${MY_PN}/chrome-sandbox
-	dosym ../../opt/${MY_PN}/${MY_BIN} usr/bin/${MY_PN}
+	fperms +x /opt/${MY_PN}/postinst.sh
+	fperms +x /opt/${MY_PN}/updater_bootstrap
+	dobin usr/bin/discord-ptb
 
 	pax-mark -m "${ED}"/opt/${MY_PN}/${MY_PN}
 }
